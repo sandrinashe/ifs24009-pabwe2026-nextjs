@@ -1,9 +1,0 @@
-[build]
-  command = "bun run build"
-  publish = "dist"
-
-# SPA fallback: semua path (mis. /auth/login) dilayani index.html agar React Router yang menangani
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200

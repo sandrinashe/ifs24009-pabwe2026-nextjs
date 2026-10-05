@@ -144,10 +144,11 @@ function HomePage() {
         <div className="relative flex-1 md:max-w-md">
           <IconSearch
             size={18}
-            className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
+            className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500"
           />
           <input
             type="text"
+            aria-label="Cari postingan"
             data-testid="search-post-input"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -158,12 +159,12 @@ function HomePage() {
       </div>
 
       {loadingPosts && filteredPosts.length === 0 ? (
-        <div className="py-16 text-center text-slate-400" data-testid="posts-loading">
+        <div className="py-16 text-center text-slate-500" data-testid="posts-loading">
           <IconLoader2 size={36} className="mx-auto text-indigo-600 animate-spin mb-2" />
           <p className="font-medium text-slate-600">Memuat postingan...</p>
         </div>
       ) : filteredPosts.length === 0 ? (
-        <div className="py-16 text-center text-slate-400 bg-white rounded-2xl border border-slate-200/80">
+        <div className="py-16 text-center text-slate-500 bg-white rounded-2xl border border-slate-200/80">
           <IconArticle size={40} className="mx-auto text-slate-300 mb-2" />
           <p className="font-medium">Belum ada postingan yang cocok.</p>
         </div>
@@ -196,7 +197,7 @@ function HomePage() {
                         className="w-9 h-9 rounded-full object-cover border border-slate-200"
                       />
                     ) : (
-                      <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold text-sm">
+                      <div className="w-9 h-9 rounded-full bg-indigo-700 text-white flex items-center justify-center font-bold text-sm">
                         {post.author?.name?.charAt(0)?.toUpperCase() || "U"}
                       </div>
                     )}
@@ -204,7 +205,7 @@ function HomePage() {
                       <p className="text-sm font-semibold text-slate-800 truncate">
                         {post.author?.name || "Pengguna"}
                       </p>
-                      <p className="text-[11px] text-slate-400 flex items-center gap-1">
+                      <p className="text-[11px] text-slate-500 flex items-center gap-1">
                         <IconCalendar size={12} />
                         {formatDate(post.created_at)}
                       </p>

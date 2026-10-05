@@ -72,13 +72,13 @@ function ChangeModal({ show, onClose, post }) {
             <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center">
               <IconEdit size={18} stroke={2.5} />
             </div>
-            <h3 className="text-base font-bold text-slate-800">Ubah Postingan</h3>
+            <h2 className="text-base font-bold text-slate-800">Ubah Postingan</h2>
           </div>
           <button
             type="button"
             data-testid="close-edit-modal-btn"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
+            className="p-1.5 rounded-lg text-slate-500 hover:text-slate-600 hover:bg-slate-100 transition-colors"
           >
             <IconX size={18} />
           </button>
@@ -86,11 +86,12 @@ function ChangeModal({ show, onClose, post }) {
 
         <form onSubmit={handleSave} className="p-6 space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+            <label htmlFor="edit-post-description-input" className="block text-sm font-semibold text-slate-700 mb-1.5">
               Isi Postingan <span className="text-red-500">*</span>
             </label>
             <textarea
-              data-testid="edit-post-description-input"
+              id="edit-post-description-input"
+            data-testid="edit-post-description-input"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               rows={4}

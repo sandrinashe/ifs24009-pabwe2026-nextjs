@@ -164,6 +164,7 @@ function DetailPage() {
 
   return (
     <div className="space-y-6 max-w-4xl mx-auto animate-in fade-in duration-300">
+      <h1 className="sr-only">Detail Postingan</h1>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <Link
           href="/"
@@ -227,7 +228,7 @@ function DetailPage() {
                 className="w-11 h-11 rounded-full object-cover border border-slate-200"
               />
             ) : (
-              <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold">
+              <div className="w-11 h-11 rounded-full bg-indigo-700 text-white flex items-center justify-center font-bold">
                 {post.author?.name?.charAt(0)?.toUpperCase() || "U"}
               </div>
             )}
@@ -235,7 +236,7 @@ function DetailPage() {
               <p className="font-bold text-slate-800" data-testid="post-author-name">
                 {post.author?.name || "Pengguna"}
               </p>
-              <p className="text-xs text-slate-400 flex items-center gap-1.5">
+              <p className="text-xs text-slate-500 flex items-center gap-1.5">
                 <IconCalendar size={13} />
                 {formatDate(post.created_at)}
               </p>
@@ -273,6 +274,7 @@ function DetailPage() {
 
         <form onSubmit={handleSendComment} className="flex items-start gap-3">
           <textarea
+            aria-label="Tulis komentar"
             data-testid="comment-input"
             value={comment}
             onChange={changeComment}
@@ -296,7 +298,7 @@ function DetailPage() {
         </form>
 
         {post.comments.length === 0 ? (
-          <p data-testid="no-comments" className="text-sm text-slate-400">
+          <p data-testid="no-comments" className="text-sm text-slate-500">
             Belum ada komentar.
           </p>
         ) : (
@@ -313,7 +315,7 @@ function DetailPage() {
                     <p className="text-sm text-slate-700 whitespace-pre-wrap break-words">
                       {item.comment}
                     </p>
-                    <p className="text-[11px] text-slate-400 mt-1">
+                    <p className="text-[11px] text-slate-500 mt-1">
                       {formatDate(item.created_at)}
                       {isMine && " · Komentar Anda"}
                     </p>

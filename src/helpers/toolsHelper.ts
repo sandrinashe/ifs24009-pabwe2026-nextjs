@@ -1,7 +1,7 @@
-import Swal from "sweetalert2";
+const loadSwal = () => import("sweetalert2").then((module) => module.default);
 
 export function showErrorDialog(message) {
-  return Swal.fire({
+  return loadSwal().then((Swal) => Swal.fire({
     title: "Terjadi Kesalahan",
     text: message,
     icon: "error",
@@ -12,11 +12,11 @@ export function showErrorDialog(message) {
       Swal.close();
     }
     return result;
-  });
+  }));
 }
 
 export function showWarningDialog(message) {
-  return Swal.fire({
+  return loadSwal().then((Swal) => Swal.fire({
     title: "Peringatan",
     text: message,
     icon: "warning",
@@ -27,11 +27,11 @@ export function showWarningDialog(message) {
       Swal.close();
     }
     return result;
-  });
+  }));
 }
 
 export function showSuccessDialog(message) {
-  return Swal.fire({
+  return loadSwal().then((Swal) => Swal.fire({
     title: "Tindakan Berhasil",
     text: message,
     icon: "success",
@@ -42,11 +42,11 @@ export function showSuccessDialog(message) {
       Swal.close();
     }
     return result;
-  });
+  }));
 }
 
 export function showConfirmDialog(message) {
-  return Swal.fire({
+  return loadSwal().then((Swal) => Swal.fire({
     title: "Konfirmasi",
     text: message,
     icon: "question",
@@ -55,7 +55,7 @@ export function showConfirmDialog(message) {
     cancelButtonText: "Tidak",
     confirmButtonColor: "#6366f1",
     cancelButtonColor: "#94a3b8",
-  });
+  }));
 }
 
 export function formatDate(date) {

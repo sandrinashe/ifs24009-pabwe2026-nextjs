@@ -58,13 +58,13 @@ function LoginPage() {
   return (
     <form onSubmit={onSubmitHandler} className="space-y-4">
       <div>
-        <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">
+        <label htmlFor="login-email-input" className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">
           Alamat Email
         </label>
         <div className="relative">
           <IconMail
             size={18}
-            className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
+            className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500"
           />
           <input
             type="email"
@@ -80,13 +80,13 @@ function LoginPage() {
       </div>
 
       <div>
-        <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">
+        <label htmlFor="login-password-input" className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">
           Kata Sandi
         </label>
         <div className="relative">
           <IconLock
             size={18}
-            className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
+            className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500"
           />
           <input
             type="password"

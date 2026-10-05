@@ -35,14 +35,14 @@ function AuthLayout({ children }: { children: React.ReactNode }) {
   const isLoginActive = pathname === "/auth/login";
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50/40 to-slate-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-slate-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
-        <div className="inline-flex w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-cyan-500 items-center justify-center text-white shadow-xl shadow-indigo-500/25 mb-3">
+        <div className="inline-flex w-14 h-14 rounded-2xl bg-indigo-600 items-center justify-center text-white shadow-xl shadow-indigo-500/25 mb-3">
           <IconNews size={32} stroke={2.5} />
         </div>
-        <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+        <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">
           Delcom Posts
-        </h2>
+        </h1>
         <p className="mt-1 text-sm text-slate-500">
           Aplikasi Berbagi Cerita & Postingan Modern
         </p>
@@ -76,7 +76,7 @@ function AuthLayout({ children }: { children: React.ReactNode }) {
           {children}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

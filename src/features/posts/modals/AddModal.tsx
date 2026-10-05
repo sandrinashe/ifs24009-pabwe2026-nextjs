@@ -68,13 +68,13 @@ function AddModal({ show, onClose, isMe = false }) {
             <div className="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center">
               <IconPlus size={18} stroke={2.5} />
             </div>
-            <h3 className="text-base font-bold text-slate-800">Buat Postingan Baru</h3>
+            <h2 className="text-base font-bold text-slate-800">Buat Postingan Baru</h2>
           </div>
           <button
             type="button"
             data-testid="close-add-modal-btn"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
+            className="p-1.5 rounded-lg text-slate-500 hover:text-slate-600 hover:bg-slate-100 transition-colors"
           >
             <IconX size={18} />
           </button>
@@ -82,11 +82,12 @@ function AddModal({ show, onClose, isMe = false }) {
 
         <form onSubmit={handleSave} className="p-6 space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+            <label htmlFor="add-post-description-input" className="block text-sm font-semibold text-slate-700 mb-1.5">
               Isi Postingan <span className="text-red-500">*</span>
             </label>
             <textarea
-              data-testid="add-post-description-input"
+              id="add-post-description-input"
+            data-testid="add-post-description-input"
               value={description}
               onChange={changeDescription}
               rows={4}
