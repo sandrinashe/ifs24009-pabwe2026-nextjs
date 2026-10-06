@@ -103,6 +103,8 @@ describe("UsersPage", () => {
     unmount();
     resolveLoad();
     await pendingPromise;
-    // No error = isMounted guard correctly prevents setState after unmount
+    // Tidak ada peringatan React: guard isMounted mencegah setState setelah unmount
+    expect(userAction.asyncSetUsers).toHaveBeenCalledTimes(1);
+    expect(screen.queryByTestId("search-user-input")).not.toBeInTheDocument();
   });
 });

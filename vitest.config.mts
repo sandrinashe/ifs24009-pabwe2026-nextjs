@@ -22,13 +22,8 @@ export default defineConfig({
       include: ["src/**/*.{js,jsx,ts,tsx}"],
       exclude: [
         "node_modules/**",
-        "src/app/**",
-        "src/components/Providers.tsx",
         "src/setupTests.ts",
-        "src/lib/config.ts",
         "src/types/**",
-        "src/hooks/redux.ts",
-        "src/server.ts",
         "scripts/**",
         "vitest.config.mts",
         "next.config.ts",

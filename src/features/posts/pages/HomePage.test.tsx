@@ -133,6 +133,8 @@ describe("HomePage", () => {
     const { unmount } = renderWithProviders(<HomePage />, { preloadedState: { profile, posts: [] } });
     unmount();
     await act(async () => resolveFetch());
+    expect(postAction.asyncSetPosts).toHaveBeenCalled();
+    expect(screen.queryByTestId("search-post-input")).not.toBeInTheDocument();
   });
 
   it("should filter posts by description and author with live search", () => {
